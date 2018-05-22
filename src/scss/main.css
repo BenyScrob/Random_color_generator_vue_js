@@ -1,0 +1,20 @@
+html
+{
+    margin-top: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.hex {
+    height: 200px;
+    width: 200px;
+    margin:5px;
+    padding: 5px;
+    color: #000000; 
+}
+.colors {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 1500px;
+}

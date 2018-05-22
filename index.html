@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="src/css/style.css" rel="stylesheet">
+       
+       <title>Random color generator</title>
+   </head>
+   <body>
+
+        <div id="app">
+
+            <!--  Search color -->
+
+            <h1>{{text}}</h1>
+            <input  v-model="fiindName"> <br><br>
+            <div v-if="colors.length > 0">
+                <div class="colors"> 
+                
+                    <div class="hex" v-for="(color, index) in search" v-bind:key="index"v-bind:style="{ backgroundColor: color.hex }">
+                
+                    <h1>{{ color.hex }}</h1> 
+            
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- random color generator -->
+
+            <br><br>
+            <hr>
+            <br><br>
+
+            <h1>{{text1}}</h1>
+            <button id="change" v-on:click="generator">Random color generator</button> 
+            <h1> {{ mycolor }} </h1>
+            
+        </div>
+
+
+       <script src="dist/main.js"></script>
+    </body>
+</html>
