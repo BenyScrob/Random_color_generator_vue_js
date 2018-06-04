@@ -9,68 +9,40 @@ var beni = new Vue({
     el: '#app',
     data: {
         text:'Search color',
-        fiindName: '',
+        fiindColor: '',
         colors: [
-            {
-                hex:"#a5a1b8",
-            },
-            {
-                hex: "#490836",
-            },
-            {
-                hex:"#782190",
-            },
-            {
-                hex: "#61e080",
-            },
-            {
-                hex:"#5e8f24",
-            },
-            {
-                hex:"#10f64f",
-            }, 
-            {
-                hex:"#bb54e5",
-            },
-            {
-                hex:"#09114e",
-            },
-            {
-                hex: "#c7f3b9",
-            },
-            {
-                hex: "#da1399",
-            },
-            {
-                hex:"#ed5fe2",
-            },  
-             {
-                hex:"#29c84c",
-            },
+            "#a5a1b8",
+            "#490836",
+            "#782190",
+            "#61e080",
+            "#5e8f24",
+            "#10f64f",
+            "#bb54e5",
+            "#09114e",
+            "#c7f3b9",
+            "#da1399",
+            "#ed5fe2",  
+            "#29c84c",
+            "#a3a3a8",
+            "#691a2f"
 
-            {
-                hex: "#a3a3a8",
-            },
-            {
-                hex:"#691a2f"
-            },
         ],
-        mycolor:" ",
     },
 
     computed: {
         search: function() {
             let self = this;
 
-            return this.colors.filter(function(color) {
-                let parts = self.fiindName.trim().split(" ");
+            return this.colors.filter(function(color) 
+            {
+                let parts = self.fiindColor.trim().split(" ");
 
-                for(let part of parts) {
+                for(let part of parts) 
+                {
                     let searchRegex = new RegExp(part, 'i');
 
-                    if(!(
-                        searchRegex.test(color.hex) 
-                    )) {
+                    if(!(searchRegex.test(color))) 
+                    {
                         return false;
                     }
                 }
@@ -81,8 +53,13 @@ var beni = new Vue({
     },
     methods: {
         generator: function(event){
-            this.mycolor = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-            document.body.style.background = this.mycolor
+            let mycolor=[];
+
+            for(let i=0; i < this.colors.length; i++)
+            {
+                mycolor.push( '#'+ Math.floor(Math.random()*0xFFFFFF).toString(16));
+            }
+            this.colors=mycolor; 
         }
     }
     

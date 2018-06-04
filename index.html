@@ -14,13 +14,13 @@
             <!--  Search color -->
 
             <h1>{{text}}</h1>
-            <input  v-model="fiindName"> <br><br>
+            <input  v-model="fiindColor"> <br><br>
             <div v-if="colors.length > 0">
                 <div class="colors"> 
                 
-                    <div class="hex" v-for="(color, index) in search" v-bind:key="index"v-bind:style="{ backgroundColor: color.hex }">
+                    <div class="hex" v-for="color in search" v-bind:style="{ backgroundColor: color }">
                 
-                    <h1>{{ color.hex }}</h1> 
+                    <h1>{{ color }}</h1> 
             
                     </div>
 
@@ -33,9 +33,7 @@
             <hr>
             <br><br>
 
-            <h1>{{text1}}</h1>
             <button id="change" v-on:click="generator">Random color generator</button> 
-            <h1> {{ mycolor }} </h1>
             
         </div>
 
